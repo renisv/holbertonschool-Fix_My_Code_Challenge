@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
-ARGV.map(&:to_i).sort.each do |num|
-  puts num
-end
+nums = ARGV.select { |s| s.match?(/\A-?\d+\z/) }
+           .map(&:to_i)
+           .sort
+
+nums.each { |n| puts n }
